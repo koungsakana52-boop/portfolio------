@@ -4,343 +4,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phinna - Education History</title>
+    <title>Clover - Education History</title>
 
-    <link rel="stylesheet" href="profal.css">
     <style>
-        
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6fa;
-    color: #172033;
-}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
 
-/* Navigation Bar */
-.navbar {
-    position: fixed;
-    width: 100%;
-    height: 65px;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e8ef;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6fa;
+            color: #172033;
+        }
 
-.logo {
-    font-size: 17px;
-    font-weight: 800;
-    color: #172033;
-}
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 65px;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e5e8ef;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
 
-.navbar nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
+        .logo {
+            font-size: 19px;
+            font-weight: 800;
+            color: #172033;
+        }
 
-.navbar nav a {
-    text-decoration: none;
-    color: #172033;
-    font-size: 13px;
-    font-weight: 600;
-    transition: 0.3s;
-}
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
 
-.navbar nav a:hover,
-.navbar nav a.active {
-    color: #2563a6;
-}
+        .navbar nav a {
+            text-decoration: none;
+            color: #172033;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-.navbar nav a.active {
-    border-bottom: 2px solid #2563a6;
-    padding-bottom: 8px;
-}
+        .navbar nav a:hover,
+        .navbar nav a.active {
+            color: #2563a6;
+        }
 
-.talk-btn {
-    text-decoration: none;
-    background: #111827;
-    color: white;
-    padding: 11px 20px;
-    border-radius: 7px;
-    font-size: 12px;
-    font-weight: 600;
-}
+        .navbar nav a.active {
+            border-bottom: 2px solid #2563a6;
+            padding-bottom: 8px;
+        }
 
-/* History Section */
-.history {
-    max-width: 1050px;
-    margin: auto;
-    padding: 30px 35px 70px;
-}
+        /* History Section */
+        .history {
+            max-width: 1050px;
+            margin: auto;
+            padding: 115px 35px 70px;
+        }
 
-.subtitle {
-    max-width: 450px;
-    margin: 0 auto 35px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #465166;
-}
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #172033;
+        }
 
-/* Timeline */
-.timeline {
-    position: relative;
-    padding-left: 35px;
-}
+        .subtitle {
+            max-width: 480px;
+            margin: 0 auto 45px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #465166;
+        }
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    bottom: 0;
-    width: 2px;
-    background: #cbd5e1;
-}
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+        }
 
-/* Timeline Item */
-.timeline-item {
-    position: relative;
-    margin-bottom: 25px;
-}
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            bottom: 0;
+            width: 2px;
+            background: #cbd5e1;
+        }
 
-/* Timeline Circle */
-.timeline-dot {
-    position: absolute;
-    left: -35px;
-    top: 18px;
-    width: 19px;
-    height: 19px;
-    border: 3px solid #2563a6;
-    border-radius: 50%;
-    background: #f4f6fa;
-    box-shadow: inset 0 0 0 3px #dce9f6;
-    z-index: 2;
-}
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
 
-/* Education Card */
-.history-card {
-    display: flex;
-    align-items: stretch;
-    min-height: 230px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #e5eaf0;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-    transition: 0.3s;
-}
+        .timeline-dot {
+            position: absolute;
+            left: -35px;
+            top: 18px;
+            width: 19px;
+            height: 19px;
+            border: 3px solid #2563a6;
+            border-radius: 50%;
+            background: #f4f6fa;
+            box-shadow: inset 0 0 0 3px #dce9f6;
+            z-index: 2;
+        }
 
-.history-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
+        /* Education Card */
+        .history-card {
+            display: flex;
+            align-items: stretch;
+            min-height: 230px;
+            background: #fff;
+            border: 1px solid #e5eaf0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: 0.3s ease;
+        }
 
-/* Reverse Layout */
-.history-card.reverse {
-    flex-direction: row-reverse;
-}
+        .history-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+        }
 
-/* Card Image */
-.card-image {
-    width: 50%;
-    min-height: 230px;
-    overflow: hidden;
-}
+        .history-card.reverse {
+            flex-direction: row-reverse;
+        }
 
-.card-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 230px;
-    object-fit: cover;
-    display: block;
-}
+        /* Images */
+        .card-image {
+            width: 50%;
+            min-height: 230px;
+            overflow: hidden;
+        }
 
-/* Card Content */
-.card-content {
-    width: 50%;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 230px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
 
-.date {
-    display: inline-block;
-    width: fit-content;
-    padding: 5px 11px;
-    background: #e0efff;
-    color: #2563a6;
-    border-radius: 20px;
-    font-size: 10px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
+        .history-card:hover .card-image img {
+            transform: scale(1.05);
+        }
 
-.card-content h2 {
-    font-size: 19px;
-    line-height: 1.3;
-    margin-bottom: 5px;
-    color: #172033;
-}
+        /* Card Content */
+        .card-content {
+            width: 50%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.card-content h4 {
-    font-size: 12px;
-    color: #4778a8;
-    margin-bottom: 12px;
-}
+        .date {
+            display: inline-block;
+            width: fit-content;
+            padding: 6px 12px;
+            background: #e0efff;
+            color: #2563a6;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
 
-.card-content p {
-    font-size: 12px;
-    line-height: 1.7;
-    color: #526071;
-    margin-bottom: 15px;
-}
+        .card-content h2 {
+            font-size: 19px;
+            line-height: 1.4;
+            margin-bottom: 5px;
+            color: #172033;
+        }
 
-/* Tags */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-}
+        .card-content h4 {
+            font-size: 12px;
+            color: #4778a8;
+            margin-bottom: 12px;
+        }
 
-.tags span {
-    background: #edf2f7;
-    color: #334155;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-size: 10px;
-    font-weight: 600;
-}
+        .card-content p {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #526071;
+            margin-bottom: 15px;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
 
-    .navbar {
-        height: auto;
-        padding: 18px 5%;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+        .tags span {
+            background: #edf2f7;
+            color: #334155;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+        }
 
-    .navbar nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #64748b;
+            font-size: 12px;
+            border-top: 1px solid #e5e8ef;
+        }
 
-    .talk-btn {
-        margin-left: auto;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 5%;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
 
-    .history {
-        padding: 25px 15px 50px;
-    }
+            .navbar nav {
+                width: 100%;
+                justify-content: center;
+                gap: 20px;
+                padding-bottom: 5px;
+            }
 
-    .subtitle {
-        font-size: 13px;
-    }
+            .history {
+                padding: 140px 15px 50px;
+            }
 
-    .history-card,
-    .history-card.reverse {
-        flex-direction: column;
-    }
+            .section-title {
+                font-size: 27px;
+            }
 
-    .card-image,
-    .card-content {
-        width: 100%;
-    }
+            .history-card,
+            .history-card.reverse {
+                flex-direction: column;
+            }
 
-    .card-image {
-        height: 210px;
-        min-height: 210px;
-    }
+            .card-image,
+            .card-content {
+                width: 100%;
+            }
 
-    .card-image img {
-        height: 210px;
-        min-height: 210px;
-    }
+            .card-image {
+                height: 210px;
+                min-height: 210px;
+            }
 
-    .card-content {
-        padding: 22px;
-    }
+            .card-image img {
+                height: 210px;
+                min-height: 210px;
+            }
 
-    .card-content h2 {
-        font-size: 18px;
-    }
-}
+            .card-content {
+                padding: 22px;
+            }
+        }
 
-@media (max-width: 480px) {
+        @media (max-width: 480px) {
+            .navbar nav {
+                gap: 15px;
+            }
 
-    .navbar nav {
-        gap: 12px;
-    }
+            .navbar nav a {
+                font-size: 11px;
+            }
 
-    .navbar nav a {
-        font-size: 11px;
-    }
+            .logo {
+                font-size: 16px;
+            }
 
-    .logo {
-        font-size: 15px;
-    }
+            .timeline {
+                padding-left: 28px;
+            }
 
-    .timeline {
-        padding-left: 28px;
-    }
+            .timeline-dot {
+                left: -28px;
+            }
 
-    .timeline-dot {
-        left: -28px;
-    }
+            .timeline::before {
+                left: 8px;
+            }
 
-    .timeline::before {
-        left: 8px;
-    }
+            .card-image,
+            .card-image img {
+                height: 180px;
+                min-height: 180px;
+            }
 
-    .card-image,
-    .card-image img {
-        height: 180px;
-        min-height: 180px;
-    }
-}
-
+            .card-content h2 {
+                font-size: 17px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
-    <header class="navbar" >
-        <div class="logo">KOUNG SAKANA</div>
+    <header class="navbar">
+        <div class="logo">Clover</div>
 
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#history">History</a>
+            <a href="#history" class="active">History</a>
         </nav>
-
     </header>
-<br><br><br><br>
-    <!-- History Section -->
-    <section class="history">
 
-        <a name="home"><p class="subtitle">
-            The schools that shaped me, from my first years in primary school
-            to my IT studies at NTTI today.
-        </p></a>
+    <!-- Education History -->
+    <section class="history" id="home">
+
+        <h1 class="section-title">My Education History</h1>
+
+        <p class="subtitle">
+            The schools that shaped me, from my first years in
+            primary school to my IT studies at NTTI today.
+        </p>
 
         <div class="timeline">
 
-            <!-- First Education Card -->
+            <!-- NTTI -->
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
@@ -348,7 +356,9 @@ body {
                 <div class="history-card">
 
                     <div class="card-image">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnyOB3gSd6KLdF18PnIeVJCtOnCbJykFMgSP3lUiqEyjvhPBmqyQXaOrUC&s=10" alt="NTTI Students">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnyOB3gSd6KLdF18PnIeVJCtOnCbJykFMgSP3lUiqEyjvhPBmqyQXaOrUC&s=10"
+                            alt="NTTI Students">
                     </div>
 
                     <div class="card-content">
@@ -360,30 +370,33 @@ body {
                         <h4>NTTI - Year 1 - ITE</h4>
 
                         <p>
-                            I'm a Year 1 student majoring in ITE. This is where
-                            I'm learning to build real software and working
-                            toward my dream of becoming a AI engener.
+                            I'm a Year 1 student majoring in ITE.
+                            This is where I'm learning to build real
+                            software and working toward my dream
+                            of becoming an AI engineer.
                         </p>
 
                         <div class="tags">
                             <span>ITE</span>
-                            <span>AI engener</span>
+                            <span>AI Engineer</span>
+                            <span>Technology</span>
                         </div>
 
                     </div>
                 </div>
             </div>
-        <a name="about">
-            <!-- Second Education Card -->
-            <div class="timeline-item">
+
+            <!-- Secondary School -->
+            <div class="timeline-item" id="about">
 
                 <div class="timeline-dot"></div>
 
                 <div class="history-card reverse">
 
                     <div class="card-image">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4zczjXM5GrU-QRpESGZ5QeT1s7o40cbgrKtwmEnb1ycY0Ci7R21zyM8E&s=10"
-                             alt="Ang Serey Secondary School">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4zczjXM5GrU-QRpESGZ5QeT1s7o40cbgrKtwmEnb1ycY0Ci7R21zyM8E&s=10"
+                            alt="Ang Serey Secondary School">
                     </div>
 
                     <div class="card-content">
@@ -395,30 +408,31 @@ body {
                         <h4>Secondary School</h4>
 
                         <p>
-                            I completed my secondary school studies here in
-                            2023, then moved on to high school to prepare
-                            for the BacII exam.
+                            I completed my secondary school studies
+                            here in 2023, then moved on to high school
+                            to prepare for the BacII examination.
                         </p>
 
                         <div class="tags">
                             <span>Secondary School</span>
+                            <span>Education</span>
                         </div>
 
                     </div>
                 </div>
             </div>
-    </a>
-    <a name="history">
-            <!-- Third Education Card -->
-            <div class="timeline-item">
+
+            <!-- High School -->
+            <div class="timeline-item" id="history">
 
                 <div class="timeline-dot"></div>
 
                 <div class="history-card">
 
                     <div class="card-image">
-                        <img src="https://i.ytimg.com/vi/JthJ1pUbTZ8/sddefault.jpg"
-                             alt="High School">
+                        <img
+                            src="https://i.ytimg.com/vi/JthJ1pUbTZ8/sddefault.jpg"
+                            alt="High School">
                     </div>
 
                     <div class="card-content">
@@ -430,10 +444,14 @@ body {
                         <h4>High School Education</h4>
 
                         <p>
-                            I completed my High School studies here in 202o
+                            I completed my high school studies here
+                            in 2020. This experience helped me build
+                            my educational foundation and prepare
+                            for the next stage of my journey.
                         </p>
 
                         <div class="tags">
+                            <span>High School</span>
                             <span>Education</span>
                         </div>
 
@@ -442,8 +460,12 @@ body {
             </div>
 
         </div>
-    </a>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Clover. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
